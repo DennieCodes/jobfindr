@@ -1,6 +1,7 @@
 from django.db import models
 
 class Application(models.Model):
+  name=models.CharField(max_length=200)
   company = models.CharField(max_length=200)
   link = models.URLField(max_length=256)
   role = models.CharField(max_length=200)

@@ -1,0 +1,64 @@
+/* Universal Styling */
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif
+}
+
+p, a {
+  font-family: 'Inter', sans-serif
+}
+
+/* Body Styling */
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+/* Header Styling */
+
+header {
+  display: flex;
+  flex-direction: row;
+  height: 4em;
+  padding: 2em 3em;
+  justify-content: space-between;
+}
+
+.branding {
+  width: 10em;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.main-nav {
+  & a {
+    font-size: 1.25rem
+  }
+}
+
+/* Main Styling */
+
+main {
+  height: 10em;
+}
+
+/* Footer Styling */
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

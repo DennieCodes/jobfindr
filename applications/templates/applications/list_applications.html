@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+  <section>
+    <h1>Applications</h1>
+    {% if applications|length == 0 %}
+    <p>There are no applications in the system</p>
+    {% else %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Link</th>
+          <th>Role</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications %}
+        <tr>
+          <td>{{ app.name }}</td>
+          <td>{{ app.company }}</td>
+          <td>{{ app.link }}</td>
+          <td>{{ app.role }}</td>
+          <td>{{ app.description }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </section>
+</main>
+{% endblock content %}

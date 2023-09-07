@@ -13,13 +13,13 @@ def user_login(request):
 
       user = authenticate(
         request,
-        email=email,
+        username=email,
         password=password,
       )
 
       if user is not None:
         login(request, user)
-        return redirect("")
+        return redirect("list_applications")
   else:
     form = LoginForm()
 
@@ -46,7 +46,7 @@ def user_signup(request):
         )
 
         login(request, user)
-        return redirect("")
+        return redirect("list_applications")
   else:
     form = SignupForm()
 
@@ -59,4 +59,4 @@ def user_signup(request):
 # LOGOUT
 def user_logout(request):
   logout(request)
-  return redirect("login")
+  return redirect("user_login")
