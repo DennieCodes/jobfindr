@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JobFindr</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'user_logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'user_login' %}">Login</a>
+          </li>
+          <li>
+            <a href="{% url 'user_signup' %}">Signup</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    <footer>
+    </footer>
+  </body>
+</html>
