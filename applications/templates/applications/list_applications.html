@@ -1,35 +1,75 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/applications.css' %}" />
+{% endblock styles %}
 
 {% block content %}
 <main>
-  <section>
-    <h1>Applications</h1>
-    {% if applications|length == 0 %}
-    <p>There are no applications in the system</p>
-    {% else %}
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Company</th>
-          <th>Link</th>
-          <th>Role</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for app in applications %}
-        <tr>
-          <td>{{ app.name }}</td>
-          <td>{{ app.company }}</td>
-          <td>{{ app.link }}</td>
-          <td>{{ app.role }}</td>
-          <td>{{ app.description }}</td>
-        </tr>
+  <h1>Applications</h1>
+  <div class="container">
+  <aside>
+    <h2>Control</h2>
+  </aside>
+
+  <section class="status-columns">
+    <div class="applications">
+      <h3>Application</h3>
+      <ul>
+        {% for apply in applications %}
+        <li>
+          {{ apply.company }}
+        </li>
         {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
+      </ul>
+    </div>
+
+    <div class="screening">
+      <h3>Screening</h3>
+      <ul>
+        {% for apply in applications %}
+        <li>
+          {{ apply.company }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="technical">
+      <h3>Technical</h3>
+      <ul>
+        {% for apply in applications %}
+        <li>
+          {{ apply.company }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="interview">
+      <h3>Interview</h3>
+      <ul>
+        {% for apply in applications %}
+        <li>
+          {{ apply.company }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="offer">
+      <h3>Offer</h3>
+      <ul>
+        {% for apply in applications %}
+        <li>
+          {{ apply.company }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
   </section>
+  </div>
 </main>
 {% endblock content %}
