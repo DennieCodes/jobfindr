@@ -1,5 +1,16 @@
 from django.db import models
 from django.conf import settings
+from enum import Enum
+
+# class ApplicationStatus(Enum):
+#   NORESPONSE = 0
+#   ADVANCE = 1
+#   REJECT = 2
+
+class ApplicationStatus(models.TextChoices):
+  NORESPONSE = "N", "No Response"
+  ADVANCING = "A", "Advancing"
+  REJECTED = "R", "Rejected"
 
 class Application(models.Model):
   name=models.CharField(max_length=200)
@@ -7,6 +18,14 @@ class Application(models.Model):
   link = models.URLField(max_length=256)
   role = models.CharField(max_length=200)
   description = models.TextField()
+  application_status = models.CharField(
+    max_length=1,
+    choices=ApplicationStatus.choices,
+    default=ApplicationStatus.NORESPONSE
+  )
+
+  # choices=[(response.value, response.name) for response in ApplicationStatus],
+  # default=ApplicationStatus.NORESPONSE.name
 
   applicant=models.ForeignKey(
     settings.AUTH_USER_MODEL,
