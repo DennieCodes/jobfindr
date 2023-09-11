@@ -10,11 +10,11 @@
   <h1>Applications</h1>
   <div class="container">
   <aside>
-    <h2>Add a new application</h2>
-    <form method="POST" class="control-form">
+    <h2>Update an application</h2>
+    <form method="post" class="control-form">
       {% csrf_token %}
       {{ form.as_p }}
-      <button>Submit</button>
+      <button>Update</button>
     </form>
   </aside>
 
@@ -24,7 +24,7 @@
       <ul>
         {% for apply in applications %}
         <li>
-          <a href={% url 'update_application' apply.id %}>{{ apply.company }}</a>
+          {{ apply.company }}
         </li>
         {% endfor %}
       </ul>
