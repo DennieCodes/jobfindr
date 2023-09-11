@@ -12,6 +12,12 @@ class Screening(models.TextChoices):
   ADVANCING = "A", "Advancing"
   REJECTED = "R", "Rejected"
 
+class Assessment(models.TextChoices):
+  AWAITING = "W", "Awaiting"
+  ONGOING = "O", "On-going"
+  PASSED = "P", "Passed"
+  REJECTED = "R", "Rejected"
+
 class Application(models.Model):
   name=models.CharField(max_length=200)
   company = models.CharField(max_length=200)
@@ -28,6 +34,12 @@ class Application(models.Model):
     max_length = 1,
     choices=Screening.choices,
     default=Screening.AWAITING
+  )
+
+  assessment = models.CharField(
+    max_length=1,
+    choices=Assessment.choices,
+    default=Assessment.AWAITING
   )
 
   applicant=models.ForeignKey(

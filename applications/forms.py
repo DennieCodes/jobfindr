@@ -21,4 +21,5 @@ class ApplicationFullForm(ModelForm):
       "description",
       "application_status",
       "screening",
+      "assessment",
     )

@@ -58,9 +58,21 @@
         <h3>Technical Assessment</h3>
         <ul>
           {% for apply in applications %}
-          <li>
-            {{ apply.company }}
-          </li>
+          {% if apply.screening == "A" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.assessment == "P" %}
+              class="advancing"
+              {% elif apply.assessment == "R" %}
+              class="rejection"
+              {% elif apply.assessment == "O" %}
+              class="ongoing"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
           {% endfor %}
         </ul>
       </div>

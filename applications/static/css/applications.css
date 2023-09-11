@@ -44,6 +44,7 @@ aside {
 
   & textarea {
     margin-top: .5em;
+    margin-bottom: 1em;
     width: 100%;
   }
 
@@ -91,10 +92,17 @@ aside {
   }
 }
 
+p:has(select) {
+  text-align: right;
+}
+
 .no-response {
   color: darkgray;
 }
 
+.on-going {
+  color: blue;
+}
 .advancing {
   color: green;
 }
