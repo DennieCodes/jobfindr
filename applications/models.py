@@ -2,13 +2,13 @@ from django.db import models
 from django.conf import settings
 from enum import Enum
 
-# class ApplicationStatus(Enum):
-#   NORESPONSE = 0
-#   ADVANCE = 1
-#   REJECT = 2
-
 class ApplicationStatus(models.TextChoices):
   NORESPONSE = "N", "No Response"
+  ADVANCING = "A", "Advancing"
+  REJECTED = "R", "Rejected"
+
+class Screening(models.TextChoices):
+  AWAITING = "W", "Awaiting"
   ADVANCING = "A", "Advancing"
   REJECTED = "R", "Rejected"
 
@@ -24,8 +24,11 @@ class Application(models.Model):
     default=ApplicationStatus.NORESPONSE
   )
 
-  # choices=[(response.value, response.name) for response in ApplicationStatus],
-  # default=ApplicationStatus.NORESPONSE.name
+  screening = models.CharField(
+    max_length = 1,
+    choices=Screening.choices,
+    default=Screening.AWAITING
+  )
 
   applicant=models.ForeignKey(
     settings.AUTH_USER_MODEL,

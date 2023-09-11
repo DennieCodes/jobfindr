@@ -37,15 +37,25 @@
         <h3>Screening</h3>
         <ul>
           {% for apply in applications %}
-          <li>
-            {{ apply.company }}
-          </li>
+          {% if apply.application_status == "A" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.screening == "A" %}
+              class="advancing"
+              {% elif apply.screening == "R" %}
+              class="rejection"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
           {% endfor %}
         </ul>
       </div>
 
       <div class="technical">
-        <h3>Technical</h3>
+        <h3>Technical Assessment</h3>
         <ul>
           {% for apply in applications %}
           <li>
