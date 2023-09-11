@@ -2,15 +2,27 @@ from django.db import models
 from django.conf import settings
 from enum import Enum
 
-# class ApplicationStatus(Enum):
-#   NORESPONSE = 0
-#   ADVANCE = 1
-#   REJECT = 2
-
 class ApplicationStatus(models.TextChoices):
   NORESPONSE = "N", "No Response"
   ADVANCING = "A", "Advancing"
   REJECTED = "R", "Rejected"
+
+class Screening(models.TextChoices):
+  AWAITING = "W", "Awaiting"
+  ADVANCING = "A", "Advancing"
+  REJECTED = "R", "Rejected"
+
+class Assessment(models.TextChoices):
+  AWAITING = "W", "Awaiting"
+  ONGOING = "O", "On-going"
+  PASSED = "P", "Passed"
+  REJECTED = "R", "Rejected"
+
+class Offer(models.TextChoices):
+  AWAITING = "W", "Awaiting"
+  COUNTER = "C", "Counter-offered"
+  REJECTED = "R", "Rejected"
+  ACCEPTED = "A", "Accepted"
 
 class Application(models.Model):
   name=models.CharField(max_length=200)
@@ -24,8 +36,29 @@ class Application(models.Model):
     default=ApplicationStatus.NORESPONSE
   )
 
-  # choices=[(response.value, response.name) for response in ApplicationStatus],
-  # default=ApplicationStatus.NORESPONSE.name
+  screening = models.CharField(
+    max_length = 1,
+    choices=Screening.choices,
+    default=Screening.AWAITING
+  )
+
+  assessment = models.CharField(
+    max_length=1,
+    choices=Assessment.choices,
+    default=Assessment.AWAITING
+  )
+
+  interview = models.CharField(
+    max_length=1,
+    choices=Assessment.choices,
+    default=Assessment.AWAITING
+  )
+
+  offer = models.CharField(
+    max_length=1,
+    choices=Offer.choices,
+    default=Offer.AWAITING
+  )
 
   applicant=models.ForeignKey(
     settings.AUTH_USER_MODEL,

@@ -1,14 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block styles %}
-<link rel="stylesheet" href="{% static 'css/applications.css' %}" />
-{% endblock styles %}
-
-{% block content %}
-<main>
-  <h1>Applications</h1>
-  <div class="container">
+{% extends 'application.html' %}
+{% block form %}
   <aside>
     <h2>Update an application</h2>
     <form method="post" class="control-form">
@@ -17,63 +8,4 @@
       <button>Update</button>
     </form>
   </aside>
-
-  <section class="status-columns">
-    <div class="applications">
-      <h3>Application</h3>
-      <ul>
-        {% for apply in applications %}
-        <li>
-          {{ apply.company }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="screening">
-      <h3>Screening</h3>
-      <ul>
-        {% for apply in applications %}
-        <li>
-          {{ apply.company }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="technical">
-      <h3>Technical</h3>
-      <ul>
-        {% for apply in applications %}
-        <li>
-          {{ apply.company }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="interview">
-      <h3>Interview</h3>
-      <ul>
-        {% for apply in applications %}
-        <li>
-          {{ apply.company }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="offer">
-      <h3>Offer</h3>
-      <ul>
-        {% for apply in applications %}
-        <li>
-          {{ apply.company }}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-  </div>
-</main>
-{% endblock content %}
+{% endblock form %}

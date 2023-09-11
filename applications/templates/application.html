@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/applications.css' %}" />
+{% endblock styles %}
+
+{% block content %}
+<main>
+  <h1>Applications</h1>
+  <div class="container">
+
+    {% block form %}
+    {% endblock form %}
+
+    <section class="status-columns">
+      <div class="applications">
+        <h3>Application</h3>
+        <ul>
+          {% for apply in applications %}
+          <li>
+          <a href={% url 'update_application' apply.id %}
+          {% if apply.application_status == "A" %}
+          class="advancing"
+          {% elif apply.application_status == "R" %}
+          class="rejection"
+          {% else %}
+          class="no-response"
+          {% endif %}
+            >{{ apply.company }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="screening">
+        <h3>Screening</h3>
+        <ul>
+          {% for apply in applications %}
+          {% if apply.application_status == "A" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.screening == "A" %}
+              class="advancing"
+              {% elif apply.screening == "R" %}
+              class="rejection"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="technical">
+        <h3>Technical Assessment</h3>
+        <ul>
+          {% for apply in applications %}
+          {% if apply.screening == "A" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.assessment == "P" %}
+              class="advancing"
+              {% elif apply.assessment == "R" %}
+              class="rejection"
+              {% elif apply.assessment == "O" %}
+              class="ongoing"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="interview">
+        <h3>Interview</h3>
+        <ul>
+          {% for apply in applications %}
+          {% if apply.assessment == "P" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.interview == "P" %}
+              class="advancing"
+              {% elif apply.interview == "R" %}
+              class="rejection"
+              {% elif apply.interview == "O" %}
+              class="ongoing"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="offer">
+        <h3>Offer</h3>
+        <ul>
+          {% for apply in applications %}
+          {% if apply.interview == "P" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.offer == "A" %}
+              class="advancing"
+              {% elif apply.offer == "R" %}
+              class="rejection"
+              {% elif apply.offer == "C" %}
+              class="ongoing"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock content %}

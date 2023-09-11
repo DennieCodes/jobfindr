@@ -20,4 +20,8 @@ class ApplicationFullForm(ModelForm):
       "role",
       "description",
       "application_status",
+      "screening",
+      "assessment",
+      "interview",
+      "offer",
     )
