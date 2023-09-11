@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock styles %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="image">
+      <img src="{% static '/images/pexels-ketut-subiyanto-4474031-web.jpg' %}" alt="Young Professional woman on her computer and tablet">
+    </div>
+    <div class="intro">
+      <h1>Welcome to JobFindr</h1>
+      <h2>Elevate your Job Search</h2>
+      <p>
+        JobFindr is your essential tool for the efficient management and tracking of all of your job search activities.
+      </p>
+      <a class="primary-cta" href="{% url 'user_signup' %}">Sign up for free</a>
+      <p>already a member?</p>
+      <a class="secondary-cta" href="{% url 'user_login' %}">Log into your account</a>
+    </div>
+  </div>
+</main>
+{% endblock content %}
