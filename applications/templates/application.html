@@ -81,9 +81,21 @@
         <h3>Interview</h3>
         <ul>
           {% for apply in applications %}
-          <li>
-            {{ apply.company }}
-          </li>
+          {% if apply.assessment == "P" %}
+            <li>
+              <a href={% url 'update_application' apply.id %}
+              {% if apply.interview == "P" %}
+              class="advancing"
+              {% elif apply.interview == "R" %}
+              class="rejection"
+              {% elif apply.interview == "O" %}
+              class="ongoing"
+              {% else %}
+              class="no-response"
+              {% endif %}
+                >{{ apply.company }}</a>
+            </li>
+          {% endif %}
           {% endfor %}
         </ul>
       </div>

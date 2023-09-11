@@ -22,4 +22,5 @@ class ApplicationFullForm(ModelForm):
       "application_status",
       "screening",
       "assessment",
+      "interview",
     )

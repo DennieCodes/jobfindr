@@ -100,8 +100,8 @@ p:has(select) {
   color: darkgray;
 }
 
-.on-going {
-  color: blue;
+.ongoing {
+  color: orange;
 }
 .advancing {
   color: green;

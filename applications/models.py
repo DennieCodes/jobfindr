@@ -42,6 +42,12 @@ class Application(models.Model):
     default=Assessment.AWAITING
   )
 
+  interview = models.CharField(
+    max_length=1,
+    choices=Assessment.choices,
+    default=Assessment.AWAITING
+  )
+
   applicant=models.ForeignKey(
     settings.AUTH_USER_MODEL,
     related_name="applications",
