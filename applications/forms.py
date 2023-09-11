@@ -23,4 +23,5 @@ class ApplicationFullForm(ModelForm):
       "screening",
       "assessment",
       "interview",
+      "offer",
     )

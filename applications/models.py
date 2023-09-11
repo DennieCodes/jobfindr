@@ -18,6 +18,12 @@ class Assessment(models.TextChoices):
   PASSED = "P", "Passed"
   REJECTED = "R", "Rejected"
 
+class Offer(models.TextChoices):
+  AWAITING = "W", "Awaiting"
+  COUNTER = "C", "Counter-offered"
+  REJECTED = "R", "Rejected"
+  ACCEPTED = "A", "Accepted"
+
 class Application(models.Model):
   name=models.CharField(max_length=200)
   company = models.CharField(max_length=200)
@@ -46,6 +52,12 @@ class Application(models.Model):
     max_length=1,
     choices=Assessment.choices,
     default=Assessment.AWAITING
+  )
+
+  offer = models.CharField(
+    max_length=1,
+    choices=Offer.choices,
+    default=Offer.AWAITING
   )
 
   applicant=models.ForeignKey(
