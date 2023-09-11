@@ -91,6 +91,18 @@ aside {
   }
 }
 
+.no-response {
+  color: darkgray;
+}
+
+.advancing {
+  color: green;
+}
+
+.rejection {
+  color: brown;
+}
+
 .applications {
 
   & h3 {
