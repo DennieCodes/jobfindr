@@ -29,11 +29,11 @@
     color: #242526;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    margin: 1.25em 0;
+    margin: 1.25em 0 2em;
   }
 
   & p:first-of-type {
-    margin: 2em 0 3.5em;
+    margin: 2em 0;
   }
 }
 
@@ -52,15 +52,23 @@ h2 {
 }
 
 .primary-cta {
+  font-size: 1rem;
   background-color: green;
   color: white;
-  padding: .75em 2em;
+  padding: 1em 2em;
   border-radius: 5px;
+  display: inline-block;
+  width: 35%;
+  text-align: center;
 }
 
 .secondary-cta {
+  font-size: 1rem;
   background-color: blue;
   color: white;
-  padding: .75em 2em;
+  padding: 1em 2em;
   border-radius: 5px;
+  display: inline-block;
+  width: 35%;
+  text-align: center;
 }

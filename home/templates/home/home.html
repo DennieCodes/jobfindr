@@ -17,9 +17,14 @@
       <p>
         JobFindr is the essential tool for managing and tracking your job search.
       </p>
+      {% if user.is_authenticated %}
+      <p>View, manage and track your job applications by clicking the button below.</p>
+      <a class="primary-cta" href="{% url 'list_applications' %}">Applications</a>
+      {% else %}
+      <p>Sign up for a free account.  Already, a member?  Sign up or login with the buttons below.</p>
       <a class="primary-cta" href="{% url 'user_signup' %}">Sign up for free</a>
-      <p>already a member?</p>
       <a class="secondary-cta" href="{% url 'user_login' %}">Log into your account</a>
+      {% endif %}
     </div>
   </div>
 </main>
