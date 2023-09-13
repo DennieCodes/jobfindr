@@ -13,7 +13,25 @@
     {% block form %}
     {% endblock form %}
 
-    <section class="status-columns">
+    <div class="application-info">
+      <div class="color-guide">
+        <h4>Status Color Guide</h4>
+        <ul class="color-guide-list">
+          <li>
+            <span class="no-response-bg"></span> = No Response/Waiting
+          </li>
+          <li>
+            <span class="advancing-bg"></span> = Advancing/Approved
+          </li>
+          <li>
+            <span class="rejection-bg"></span> = Rejected
+          </li>
+          <li>
+            <span class="ongoing-bg"></span> = Ongoing/Counter-offer
+          </li>
+        </ul>
+      </div>
+      <section class="status-columns">
       <div class="applications">
         <h3>Application</h3>
         <ul>
@@ -118,10 +136,12 @@
               {% endif %}
                 >{{ apply.company }}</a>
             </li>
-          {% endif %}          {% endfor %}
+          {% endif %}
+          {% endfor %}
         </ul>
       </div>
     </section>
+    </div>
   </div>
 </main>
 {% endblock content %}

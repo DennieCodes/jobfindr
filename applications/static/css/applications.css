@@ -63,8 +63,12 @@ aside {
 
 
 /* Application status gallery styling */
-.status-columns {
+
+.application-info {
   flex-grow: 1;
+}
+
+.status-columns {
   display: flex;
   flex-direction: row;
 
@@ -100,47 +104,99 @@ p:has(select) {
   color: darkgray;
 }
 
+.no-response-bg {
+  background-color: darkgray;
+}
+
 .ongoing {
   color: orange;
 }
+
+.ongoing-bg {
+  background-color: orange;
+}
+
 .advancing {
   color: green;
+}
+
+.advancing-bg {
+  background-color: green;
 }
 
 .rejection {
   color: brown;
 }
 
-.applications {
+.rejection-bg {
+  background-color: brown;
+}
 
+div.color-guide {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: .5em 2em;
+  margin: 0 10px 1em 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+  & h4 {
+    margin: 0;
+  }
+
+  & ul.color-guide-list {
+    display: flex;
+    flex-direction: row;
+    margin: .25em 0 .5em;
+
+    & li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: none;
+      padding: 0.125em 0;
+      gap: .25em;
+      margin: 0 1em;
+
+      & span {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+  }
+}
+
+
+/* Status Columns heading color settings */
+.applications {
   & h3 {
     background-color: blue;
   }
 }
 
 .screening {
-
   & h3 {
     background-color: orange;
   }
 }
 
 .technical {
-
   & h3 {
     background-color: purple;
   }
 }
 
 .interview {
-
   & h3 {
     background-color: brown;
   }
 }
 
 .offer {
-
   & h3 {
     background-color: green;
   }
