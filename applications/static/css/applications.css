@@ -8,6 +8,7 @@ h1 {
   margin-top: 0;
   font-size: 3rem;
   font-weight: 300;
+  color: #3A79B7;
 }
 
 .container {
@@ -22,8 +23,9 @@ aside {
 
   & h2 {
     text-align: center;
-    color: green;
+    color: #1F355E;
     font-size: 1.5rem;
+    margin-top: 0;
   }
 }
 
@@ -73,7 +75,7 @@ aside {
   flex-direction: row;
 
   & div {
-
+    min-height: 400px;
     flex-basis: 20%;
     flex-grow: 1;
     margin: 0 10px;
@@ -170,34 +172,33 @@ div.color-guide {
   }
 }
 
-
 /* Status Columns heading color settings */
 .applications {
   & h3 {
-    background-color: blue;
+    background-color: #3A79B7;
   }
 }
 
 .screening {
   & h3 {
-    background-color: orange;
+    background-color: #6CB3E0;
   }
 }
 
 .technical {
   & h3 {
-    background-color: purple;
+    background-color: #A2C7E5;
   }
 }
 
 .interview {
   & h3 {
-    background-color: brown;
+    background-color: #6C7B8B;
   }
 }
 
 .offer {
   & h3 {
-    background-color: green;
+    background-color: #1F355E ;
   }
 }

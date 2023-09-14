@@ -55,7 +55,9 @@ header {
   }
 
   & a {
-    font-size: 1.25rem
+    font-size: 1.25rem;
+    color: #1F355E;
+
   }
 }
 

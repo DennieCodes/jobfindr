@@ -37,12 +37,12 @@
 
   & input {
     line-height: 2rem;
-    width: 300px;
+    width: 100%;
     font-size: 1rem;
   }
 
   & button {
-    background-color: green;
+    background-color: blue;
     font-size: 1.25rem;
     color: white;
     align-self: center;

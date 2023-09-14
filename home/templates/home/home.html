@@ -19,11 +19,16 @@
       </p>
       {% if user.is_authenticated %}
       <p>View, manage and track your job applications by clicking the button below.</p>
-      <a class="primary-cta" href="{% url 'list_applications' %}">Applications</a>
+      <div class="buttons">
+        <a class="primary-cta" href="{% url 'list_applications' %}">Applications</a>
+      </div>
       {% else %}
       <p>Sign up for a free account.  Already, a member?  Sign up or login with the buttons below.</p>
-      <a class="primary-cta" href="{% url 'user_signup' %}">Sign up for free</a>
-      <a class="secondary-cta" href="{% url 'user_login' %}">Log into your account</a>
+
+      <div class="buttons">
+        <a class="primary-cta" href="{% url 'user_signup' %}">Sign up</a>
+        <a class="secondary-cta" href="{% url 'user_login' %}">Log in</a>
+      </div>
       {% endif %}
     </div>
   </div>
