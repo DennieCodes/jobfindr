@@ -6,6 +6,7 @@
       {% csrf_token %}
       {{ form.as_p }}
       <button>Update</button>
+      <a class="delete-button" href="{% url 'delete_application' application.id %}">Delete</a>
     </form>
   </aside>
 {% endblock form %}
