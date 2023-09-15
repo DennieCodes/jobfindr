@@ -8,7 +8,8 @@ class ApplicationForm(ModelForm):
       "company",
       "link",
       "role",
-      "description"
+      "description",
+      "date_applied",
     )
 
 class ApplicationFullForm(ModelForm):
@@ -19,6 +20,7 @@ class ApplicationFullForm(ModelForm):
       "link",
       "role",
       "description",
+      "date_applied",
       "application_status",
       "screening",
       "assessment",
