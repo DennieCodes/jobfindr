@@ -32,7 +32,7 @@ header {
   display: flex;
   flex-direction: row;
   height: 4em;
-  padding: 2em 3em;
+  padding: 2em 3em 1em;
   justify-content: space-between;
 }
 
@@ -55,7 +55,9 @@ header {
   }
 
   & a {
-    font-size: 1.25rem
+    font-size: 1.25rem;
+    color: #1F355E;
+
   }
 }
 

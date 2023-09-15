@@ -59,4 +59,4 @@ def user_signup(request):
 # LOGOUT
 def user_logout(request):
   logout(request)
-  return redirect("user_login")
+  return redirect("home")

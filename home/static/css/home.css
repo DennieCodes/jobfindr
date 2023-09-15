@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+  width: 100%;
+  gap: 4em;
+}
+
+.image {
+  width: 25%;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.intro {
+  width: 24%;
+
+  & p {
+    color: #242526;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 1.25em 0 2em;
+  }
+
+  & p:first-of-type {
+    margin: 2em 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+
+  & a {
+    font-size: 1rem;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 5px;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 0 .25em;
+  text-align: center;
+  color: #1F355E;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #6CB3E0;
+}
+
+.primary-cta {
+  background-color: green;
+}
+
+.secondary-cta {
+  /* margin-top: 1em; */
+  background-color: blue;
+}

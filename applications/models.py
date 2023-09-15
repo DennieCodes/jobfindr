@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
-from enum import Enum
+from datetime import date
+
 
 class ApplicationStatus(models.TextChoices):
   NORESPONSE = "N", "No Response"
@@ -30,6 +31,7 @@ class Application(models.Model):
   link = models.URLField(max_length=256)
   role = models.CharField(max_length=200)
   description = models.TextField()
+  date_applied = models.DateField(default=date.today)
   application_status = models.CharField(
     max_length=1,
     choices=ApplicationStatus.choices,

@@ -8,6 +8,7 @@ h1 {
   margin-top: 0;
   font-size: 3rem;
   font-weight: 300;
+  color: #3A79B7;
 }
 
 .container {
@@ -22,8 +23,9 @@ aside {
 
   & h2 {
     text-align: center;
-    color: green;
+    color: #1F355E;
     font-size: 1.5rem;
+    margin-top: 0;
   }
 }
 
@@ -48,10 +50,9 @@ aside {
     width: 100%;
   }
 
-  & button {
+  & button, & .delete-button {
     font-size: 1.25rem;
     color: white;
-    background-color: green;
     padding: .5em 3em;
     display: block;
     margin: 1em auto .5em;
@@ -59,17 +60,33 @@ aside {
     border-radius: 5px;
     cursor: pointer;
   }
+
+  & button {
+    background-color: green;
+  }
+
+  & .delete-button {
+    background-color: brown;
+    text-align: center;
+    width: 30%;
+  }
 }
 
 
+
+
 /* Application status gallery styling */
-.status-columns {
+
+.application-info {
   flex-grow: 1;
+}
+
+.status-columns {
   display: flex;
   flex-direction: row;
 
   & div {
-
+    min-height: 400px;
     flex-basis: 20%;
     flex-grow: 1;
     margin: 0 10px;
@@ -100,48 +117,99 @@ p:has(select) {
   color: darkgray;
 }
 
+.no-response-bg {
+  background-color: darkgray;
+}
+
 .ongoing {
   color: orange;
 }
+
+.ongoing-bg {
+  background-color: orange;
+}
+
 .advancing {
   color: green;
+}
+
+.advancing-bg {
+  background-color: green;
 }
 
 .rejection {
   color: brown;
 }
 
-.applications {
+.rejection-bg {
+  background-color: brown;
+}
 
+div.color-guide {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: .5em 2em;
+  margin: 0 10px 1em 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+  & h4 {
+    margin: 0;
+  }
+
+  & ul.color-guide-list {
+    display: flex;
+    flex-direction: row;
+    margin: .25em 0 .5em;
+
+    & li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: none;
+      padding: 0.125em 0;
+      gap: .25em;
+      margin: 0 1em;
+
+      & span {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+  }
+}
+
+/* Status Columns heading color settings */
+.applications {
   & h3 {
-    background-color: blue;
+    background-color: #3A79B7;
   }
 }
 
 .screening {
-
   & h3 {
-    background-color: orange;
+    background-color: #6CB3E0;
   }
 }
 
 .technical {
-
   & h3 {
-    background-color: purple;
+    background-color: #A2C7E5;
   }
 }
 
 .interview {
-
   & h3 {
-    background-color: brown;
+    background-color: #6C7B8B;
   }
 }
 
 .offer {
-
   & h3 {
-    background-color: green;
+    background-color: #1F355E ;
   }
 }

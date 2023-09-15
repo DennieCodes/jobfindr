@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock styles %}
 
 {% block content %}
 <main>
-  <section>
-    <h1>Login</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button>Login</button>
-    </form>
-  </section>
+  <div class="container">
+    <h1>Login to your Account</h1>
+    <div class="image-container">
+      <img src="{% static '/images/pexels-pixabay-461064-web.jpg' %}" alt="An overview of a man with his hands on a computer">
+    </div>
+
+    <div class="form-container">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Login</button>
+      </form>
+    </div>
+  </div>
 </main>
 {% endblock content %}

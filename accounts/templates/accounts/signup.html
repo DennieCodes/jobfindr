@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+{% endblock styles %}
 
 {% block content %}
 <main>
-  <section>
-    <h1>Sign up</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button>Sign Up</button>
-    </form>
-  </section>
+  <div class="container">
+    <div class="image">
+      <img src="{% static '/images/pexels-anna-shvets-3727513-web.jpg' %}" alt="A young professional woman signing a form">
+    </div>
+    <div class="signup-container">
+      <h1>Sign up for a free account, today</h1>
+      <form class="signup" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Sign Up</button>
+      </form>
+    </div>
+  </div>
 </main>
 {% endblock content %}

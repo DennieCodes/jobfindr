@@ -16,13 +16,21 @@
   <body>
     <header>
       <div class="branding">
-        <img src="{% static 'images/JobFindr_logo.png' %}" alt="JobFindr logo">
+        <a href="{% url 'home' %}">
+          <img src="{% static 'images/JobFindr_logo.png' %}" alt="JobFindr logo">
+        </a>
       </div>
       <nav class="main-nav">
         <ul>
           {% if user.is_authenticated %}
           <li>
             <a href="{% url 'list_applications' %}">Applications</a>
+          </li>
+          <li>
+            <a href="">Contacts</a>
+          </li>
+          <li>
+            <a href="">Documents</a>
           </li>
           <li>
             <a href="">Account</a>

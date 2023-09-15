@@ -3,6 +3,13 @@ from applications.models import Application
 from applications.forms import ApplicationForm, ApplicationFullForm
 from django.contrib.auth.decorators import login_required
 
+# DELETE_APPLICATION
+@login_required
+def delete_application(request, id):
+  application = get_object_or_404(Application, id=id)
+  application.delete()
+  return redirect("list_applications")
+
 # UPDATE_APPLICATION
 @login_required
 def update_application(request, id):
@@ -19,6 +26,7 @@ def update_application(request, id):
 
   context = {
     "applications": applications,
+    "application": application,
     "form": form
   }
 
