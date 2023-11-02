@@ -3,6 +3,7 @@ from django.conf import settings
 from datetime import date
 from applications.types import ApplicationStatus, Screening, Assessment, Offer
 
+
 class Application(models.Model):
   name=models.CharField(max_length=200)
   company = models.CharField(max_length=200)
